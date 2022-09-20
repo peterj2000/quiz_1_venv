@@ -25,6 +25,18 @@ import csv
 
 # open the vendorlist file
 
+# open the vendorlist file
+infile = open ("VendorList.csv","r")
+outfile = open('marketinglistFINAL.csv' , 'w')
+de = csv.reader(infile, delimiter=',')
+
+for rows in de: 
+    dic = {row[1]+' '+row[2]+':'+row[4]+','+row[5] for row in de }
+ 
+outfile.write("Name,Email,Phone #")
+outfile.write(str(dic))
+
+outfile.close()
 
 # create a csv object from the file object
 
